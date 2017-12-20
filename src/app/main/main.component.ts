@@ -1,4 +1,7 @@
+import { MovieDbService } from './../movie-db.service';
 import { Component, OnInit } from '@angular/core';
+
+import {  MovieThumbnail } from './../movie';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  public popularMovies:MovieThumbnail[] = [];
+
+  constructor(private movieDbService:MovieDbService) { }
 
   ngOnInit() {
+    this.movieDbService.getPopularMovies()
+      .subscribe((movies:MovieThumbnail[]) => this.popularMovies = movies);
   }
 
 }

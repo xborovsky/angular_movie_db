@@ -1,0 +1,11 @@
+.movie__title, .movie__release-date {
+    display: block;
+}
+
+.movie__title {
+    font-size: 2rem;
+}
+
+.movie__release-date {
+    font-size: 1.5rem;
+}

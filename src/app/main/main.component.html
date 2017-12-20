@@ -1,1 +1,10 @@
 <app-search></app-search>
+
+<div class="panel panel-default">
+    <div class="panel-heading">Popular movies</div>
+    <div class="panel-body">
+      <div class="col-xs-12 col-sm-6 col-md-3" *ngFor="let popularMovie of popularMovies">
+        <app-movie-thumbnail [movieData]="popularMovie"></app-movie-thumbnail>
+      </div>
+    </div>
+</div>

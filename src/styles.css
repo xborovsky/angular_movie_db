@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    font-size: 62.5%;
+}
+
 .capitalize {
     text-transform: capitalize;
+}
+
+.panel-heading {
+    font-size: 2rem;
 }
