@@ -1,0 +1,7 @@
+<div class="jumbotron">
+  <h1 class="capitalize">Find a movie</h1>
+  <h2>Search for a movie using the form below</h2>
+
+  <input type="text" class="form-control" #searchText />
+  <button type="button" class="btn btn-lg btn-primary" (click)="searchMovies(searchText.value)">Find</button>
+</div>
