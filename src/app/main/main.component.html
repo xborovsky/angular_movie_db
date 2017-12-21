@@ -26,3 +26,12 @@
       </div>
     </div>
 </div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">Upcoming movies</div>
+    <div class="panel-body">
+      <div class="col-xs-12 col-sm-4 col-md-2" *ngFor="let upcomingMovie of upcomingMovies; let i=index;">
+        <app-movie-thumbnail [movieData]="upcomingMovie" *ngIf="i<12"></app-movie-thumbnail>
+      </div>
+    </div>
+</div>

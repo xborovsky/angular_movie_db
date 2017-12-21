@@ -5,4 +5,5 @@ export class Constants {
     public static MOVIE_URL = `${Constants.BASE_URL}/movie`;
     public static POPULAR_MOVIES_URL = `${Constants.MOVIE_URL}/popular?api_key=${Constants.API_KEY}`;
     public static NOW_PLAYING_MOVIES_URL = `${Constants.MOVIE_URL}/now_playing?api_key=${Constants.API_KEY}`;
+    public static UPCOMING_MOVIES_URL = `${Constants.MOVIE_URL}/upcoming?api_key=${Constants.API_KEY}`;
 }

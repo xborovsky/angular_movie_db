@@ -12,6 +12,7 @@ export class MainComponent implements OnInit {
 
   public popularMovies:MovieThumbnail[] = [];
   public nowPlayingMovies:MovieThumbnail[] = [];
+  public upcomingMovies:MovieThumbnail[] = [];
   public searchResult:MovieThumbnail[] = [];
 
   constructor(private movieDbService:MovieDbThumbnailService) { }
@@ -22,10 +23,12 @@ export class MainComponent implements OnInit {
 
     this.movieDbService.getNowPlayingMovies()
       .subscribe((movies:MovieThumbnail[]) => this.nowPlayingMovies = movies);
+
+    this.movieDbService.getUpcomingMovies()
+      .subscribe((movies:MovieThumbnail[]) => this.upcomingMovies = movies);
   }
 
   showSearchResult(movies:MovieThumbnail[]) {
-    console.log(movies);
     this.searchResult = movies;
   }
 

@@ -34,4 +34,11 @@ export class MovieDbThumbnailService {
       });
   }
 
+  getUpcomingMovies():Observable<MovieThumbnail[]> {
+    return this.http.get(Constants.UPCOMING_MOVIES_URL)
+      .map(res => {
+        return this.dataExtractService.extractThumbnails(res.json());
+      });
+  }
+
 }
