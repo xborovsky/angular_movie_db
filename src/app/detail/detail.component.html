@@ -34,7 +34,7 @@
                 </tr>
                 <tr>
                   <th>Genres</th>
-                  <td>{{movie.genres.join(', ')}}</td>
+                  <td><span class="badge" *ngFor="let genre of movie.genres">{{genre}}</span></td>
                 </tr>
               </tbody>
             </table>

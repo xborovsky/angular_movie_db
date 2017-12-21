@@ -7,3 +7,7 @@ table {
     display: inline-block;
     width: 100%;
 }
+
+.badge {
+    margin: 0 5px;
+}
