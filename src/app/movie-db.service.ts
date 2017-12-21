@@ -16,4 +16,9 @@ export class MovieDbService {
       .map(res => this.movieExtractService.extractDetailData(res.json()));
   }
 
+  getCredits(movieId:string):Observable<any> {
+    return this.http.get(`${Constants.MOVIE_URL}/${movieId}/credits?api_key=${Constants.API_KEY}`)
+      .map(res => res.json());
+  }
+
 }

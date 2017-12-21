@@ -15,6 +15,7 @@ import { MainComponent } from './main/main.component';
 import { SearchComponent } from './search/search.component';
 import { MovieThumbnailComponent } from './movie-thumbnail/movie-thumbnail.component';
 import { DetailComponent } from './detail/detail.component';
+import { CreditsComponent } from './credits/credits.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DetailComponent } from './detail/detail.component';
     MainComponent,
     SearchComponent,
     MovieThumbnailComponent,
-    DetailComponent
+    DetailComponent,
+    CreditsComponent
   ],
   imports: [
     BrowserModule,

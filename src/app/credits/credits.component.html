@@ -1,0 +1,11 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Cast</div>
+  <div class="panel-body">
+      <div class="cast col-xs-12 col-sm-4 col-md-2" *ngFor="let castPerson of cast">
+          <img *ngIf="castPerson.profile_path" src="https://image.tmdb.org/t/p/w300/{{castPerson.profile_path}}" alt="" title="{{castPerson.name}}" class="img-thumbnail cast__img" />
+          <img *ngIf="!castPerson.profile_path" src="../../assets/img/unknown.png" alt="" title="Unknown" class="img-thumbnail cast__img" />
+          <span class="cast__character">{{castPerson.character}}</span>
+          <span class="cast__name">{{castPerson.name}}</span>
+      </div>
+  </div>
+</div>
