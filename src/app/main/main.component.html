@@ -1,6 +1,6 @@
 <app-search (onSearchResult)="showSearchResult($event)"></app-search>
 
-<div class="panel panel-default" *ngIf="searchResult">
+<div class="panel panel-default" *ngIf="searchResult && searchResult.length">
     <div class="panel-heading">Search result</div>
     <div class="panel-body">
       <div class="col-xs-12 col-sm-4 col-md-2" *ngFor="let movie of searchResult; let i=index;">
