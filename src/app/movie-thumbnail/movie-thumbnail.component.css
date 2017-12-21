@@ -1,3 +1,12 @@
+.movie {
+    height: 350px;
+    position: relative;
+}
+
+.movie__img {
+    width: 200px;
+}
+
 .movie__title, .movie__release-date {
     display: block;
 }
@@ -8,4 +17,10 @@
 
 .movie__release-date {
     font-size: 1.5rem;
+}
+
+.movie .btn {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
 }

@@ -9,13 +9,14 @@ const API_KEY = 'c264f8b2a5a6ecf66e5b42cfc2df737b';
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const SEARCH_URL = `${BASE_URL}search/movie?api_key=${API_KEY}&query=`;
 const POPULAR_MOVIES_URL = `${BASE_URL}movie/popular?api_key=${API_KEY}`;
+const NOW_PLAYING_MOVIES_URL = `${BASE_URL}movie/now_playing?api_key=${API_KEY}`;
 
 @Injectable()
-export class MovieDbService {
+export class MovieDbThumbnailService {
 
   constructor(private http:Http) { }
 
-  searchMovie(searchText:string):Observable<Movie[]> {
+  searchMovie(searchText:string):Observable<MovieThumbnail[]> {
     const url = `${SEARCH_URL}${searchText}`;
     return this.http.get(url)
       .map(res => {
@@ -26,6 +27,13 @@ export class MovieDbService {
   
   getPopularMovies():Observable<MovieThumbnail[]> {
     return this.http.get(POPULAR_MOVIES_URL)
+      .map(res => {
+        return this.extractThumbnailData(res.json());
+      });
+  }
+
+  getNowPlayingMovies():Observable<MovieThumbnail[]> {
+    return this.http.get(NOW_PLAYING_MOVIES_URL)
       .map(res => {
         return this.extractThumbnailData(res.json());
       });

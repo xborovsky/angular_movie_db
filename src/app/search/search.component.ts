@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { MovieDbService } from './../movie-db.service';
+import { MovieDbThumbnailService } from './../movie-db-thumbnail.service';
 import { Movie } from './../movie';
 
 @Component({
@@ -10,7 +10,7 @@ import { Movie } from './../movie';
 })
 export class SearchComponent {
 
-  constructor(private movieDbService:MovieDbService) { }
+  constructor(private movieDbService:MovieDbThumbnailService) { }
 
   searchMovies(searchText:string) {
     console.log('search movies...');

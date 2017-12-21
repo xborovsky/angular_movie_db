@@ -1,4 +1,3 @@
-import { MovieDbService } from './movie-db.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -11,6 +10,7 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { SearchComponent } from './search/search.component';
 import { MovieThumbnailComponent } from './movie-thumbnail/movie-thumbnail.component';
+import { MovieDbThumbnailService } from './movie-db-thumbnail.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { MovieThumbnailComponent } from './movie-thumbnail/movie-thumbnail.compo
     RouterModule.forRoot(routes),
     HttpModule
   ],
-  providers: [MovieDbService],
+  providers: [MovieDbThumbnailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
