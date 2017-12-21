@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 import { MovieDbThumbnailService } from './../movie-db-thumbnail.service';
-import { Movie } from './../movie';
+import { MovieThumbnail } from './../movie';
 
 @Component({
   selector: 'app-search',
@@ -10,13 +10,15 @@ import { Movie } from './../movie';
 })
 export class SearchComponent {
 
+  @Output()
+  onSearchResult = new EventEmitter<MovieThumbnail[]>();
+
   constructor(private movieDbService:MovieDbThumbnailService) { }
 
   searchMovies(searchText:string) {
-    console.log('search movies...');
     this.movieDbService.searchMovie(searchText)
-      .subscribe((movies:Movie[]) => {
-        console.log(movies);
+      .subscribe((movies:MovieThumbnail[]) => {
+        this.onSearchResult.emit(movies);
       });
   }
 

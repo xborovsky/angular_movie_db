@@ -16,8 +16,7 @@ export class MovieDbThumbnailService {
     const url = `${Constants.SEARCH_URL}${searchText}`;
     return this.http.get(url)
       .map(res => {
-        console.log(res.json());
-        return null;
+        return this.dataExtractService.extractThumbnails(res.json());
       });
   }
   
