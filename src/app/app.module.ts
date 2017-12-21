@@ -6,25 +6,30 @@ import { HttpModule } from '@angular/http';
 
 import { routes } from './routes';
 
+import { MovieDbService } from './movie-db.service';
+import { MovieDbThumbnailService } from './movie-db-thumbnail.service';
+import { MovieExtractService } from './movie-extract.service';
+
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { SearchComponent } from './search/search.component';
 import { MovieThumbnailComponent } from './movie-thumbnail/movie-thumbnail.component';
-import { MovieDbThumbnailService } from './movie-db-thumbnail.service';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     SearchComponent,
-    MovieThumbnailComponent
+    MovieThumbnailComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpModule
   ],
-  providers: [MovieDbThumbnailService],
+  providers: [MovieDbThumbnailService, MovieDbService, MovieExtractService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,5 +2,5 @@
   <img src="https://image.tmdb.org/t/p/w300/{{movieData.image}}" alt="" title="{{movieData.title}}" class="img-thumbnail movie__img" />
   <span class="movie__title">{{movieData.title}}</span>
   <span class="movie__release-date">{{movieData.releaseDate}}</span>
-  <a class="btn btn-basic">View details</a>
+  <a class="btn btn-basic" [routerLink]="['/movie', movieData.id]">View details</a>
 </div>
